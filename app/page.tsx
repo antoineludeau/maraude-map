@@ -1,101 +1,115 @@
-import Image from "next/image";
+"use client";
+
+import { useState, useRef, useEffect } from "react";
+import Map, { ScaleControl, NavigationControl } from "react-map-gl/maplibre";
+import type { MapRef, LngLatBoundsLike } from "react-map-gl/maplibre";
+import { buffer, bbox, bboxPolygon } from "@turf/turf";
+
+import "maplibre-gl/dist/maplibre-gl.css";
+
+import MaraudeList from "@/components/MaraudeList";
+import DrawTool from "@/components/DrawTool";
+import MaraudeMap from "@/components/MaraudeMap";
+import AddMaraudeMenu from "@/components/AddMaraudeMenu";
+import type { Maraude } from "@/types/maraude";
+import type { Geometry } from "@/types/geometry";
+
+import initMaraudes from "@/data/maraudes.json";
+import Loading from "@/components/Loading";
+
+const BUFFER_UNITS = "kilometers";
+const BUFFER_DISTANCE = 0.2;
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const mapRef = useRef<MapRef>(null); // Reference to the map
+  const [isMapReady, setIsMapReady] = useState(false);
+  const [maraudes, setMaraudes] = useState<Maraude[]>(
+    initMaraudes as Maraude[]
+  );
+  const [selectedMaraudeID, setSelectedMaraudeID] = useState<string | null>(
+    null
+  );
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [hoveredMaraudeID, setHoveredMaraudeID] = useState<string | null>(null);
+  const [editMode, setEditMode] = useState(false);
+  const [geometry, setGeometry] = useState<Geometry | null>(null);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  const onSelectMaraude = (id: string) => {
+    setSelectedMaraudeID(id);
+    setMenuOpen(true);
+  };
+
+  useEffect(() => {
+    const map = mapRef.current;
+    if (map && selectedMaraudeID) {
+      const maraude = maraudes.find((m) => m.id === selectedMaraudeID);
+      const geometry = maraude?.geometry;
+      if (maraude && geometry) {
+        const boundingBox = bbox(geometry as any);
+        const boundingBoxPolygon = bboxPolygon(boundingBox);
+        const buffered = buffer(boundingBoxPolygon, BUFFER_DISTANCE, {
+          units: BUFFER_UNITS,
+        });
+        if (!buffered) return;
+        const bounds: LngLatBoundsLike = bbox(buffered) as LngLatBoundsLike;
+        map.fitBounds(bounds, {
+          duration: 2500,
+        });
+      }
+    }
+  }, [selectedMaraudeID, maraudes]);
+
+  return (
+    <div className="w-full h-screen">
+      <MaraudeList
+        maraudes={maraudes}
+        menuOpen={menuOpen}
+        setMenuOpen={setMenuOpen}
+        selectedMaraudeID={selectedMaraudeID}
+        onSelect={onSelectMaraude}
+        onHover={setHoveredMaraudeID}
+        setEditMode={setEditMode}
+      />
+      <AddMaraudeMenu
+        editMode={editMode}
+        setEditMode={setEditMode}
+        geometry={geometry}
+        setGeometry={setGeometry}
+        setMaraudes={setMaraudes}
+        setSelectedMaraudeID={setSelectedMaraudeID}
+      />
+      {!isMapReady && (
+        <div className="flex items-center justify-center h-screen">
+          <Loading />
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      )}
+      <Map
+        ref={mapRef}
+        initialViewState={{
+          longitude: 2.3522,
+          latitude: 48.8566,
+          zoom: 14,
+        }}
+        style={{
+          position: "relative",
+          width: "100%",
+          height: "100%",
+          opacity: isMapReady ? 1 : 0,
+          transition: "opacity 0.8s ease",
+        }}
+        mapStyle="https://openmaptiles.geo.data.gouv.fr/styles/osm-bright/style.json"
+        onLoad={() => setIsMapReady(true)}
+        interactiveLayerIds={["polygon-layer", "line-layer"]}
+      >
+        <ScaleControl position="bottom-right" maxWidth={150} unit="metric" />
+        <NavigationControl position="bottom-right" showCompass />
+        <MaraudeMap
+          maraudes={maraudes}
+          onSelectMaraude={onSelectMaraude}
+          hoveredMaraudeID={hoveredMaraudeID}
+        />
+        {editMode && <DrawTool setGeometry={setGeometry} />}
+      </Map>
     </div>
   );
 }
