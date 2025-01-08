@@ -1,0 +1,36 @@
+# Node modules and dependencies (already installed in the Docker image)
+node_modules
+npm-debug.log
+yarn-error.log
+
+# Logs
+logs
+*.log
+
+# Next.js build output
+.next
+
+# MacOS system files
+.DS_Store
+
+# Environment files (usually handled via build-time secrets or passed dynamically)
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+
+# Git-related files
+.git
+.gitignore
+
+# Other files/directories that shouldn't be included
+.idea
+.vscode
+*.swp
+*.swo
+*.swn
+*.swd
+*.swp
+*.bak
+*.tmp

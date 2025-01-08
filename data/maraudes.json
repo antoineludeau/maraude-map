@@ -1,0 +1,264 @@
+[
+  {
+    "id": "a93bd4",
+    "name": "Les Restos du Cœur",
+    "description": "Les Restos du Cœur is a French charity that provides free meals to those in need, through distribution points and mobile food distribution (maraudes) in the streets.",
+    "image": "/placeholder.jpg",
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [2.342347961627496, 48.86384661095502],
+          [2.341613108656162, 48.86239631951469],
+          [2.3448731836572563, 48.86165797318253],
+          [2.345020154251074, 48.86137669552426],
+          [2.344886544620522, 48.8610338862411],
+          [2.345786816775359, 48.86068562387675],
+          [2.346476121846081, 48.860020503134876],
+          [2.3474479816833878, 48.85893218401978],
+          [2.3474433863162005, 48.85879008580801],
+          [2.3482521709312607, 48.858548215583625],
+          [2.350963625266502, 48.86337272081565],
+          [2.3490202786712757, 48.863842890104934],
+          [2.346049046273663, 48.86325121567393],
+          [2.3454562014068188, 48.86414773898278],
+          [2.3439625548505774, 48.863344755450754],
+          [2.3426616368818713, 48.8636458757847],
+          [2.342347961627496, 48.86384661095502]
+        ]
+      ]
+    },
+    "date": "Every Monday at 22h",
+    "mail": "contact@restosducoeur.org",
+    "tel": "+33 1 23 45 67 89",
+    "link": "https://www.restosducoeur.org"
+  },
+  {
+    "id": "cefcf8",
+    "name": "La Croix-Rouge Française",
+    "description": "The French Red Cross is a humanitarian organization that helps those in distress through food distribution, emergency aid, and social support.",
+    "image": "/placeholder.jpg",
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [2.3653793217374925, 48.87075327690428],
+          [2.363699455002404, 48.8698963704681],
+          [2.363082361100311, 48.868633534233595],
+          [2.3622767107276275, 48.86795700171169],
+          [2.3647793693318135, 48.866536253642096],
+          [2.365550736710702, 48.86697601330735],
+          [2.369681837558744, 48.866220526370824],
+          [2.3659107081534785, 48.87095622627899],
+          [2.3653793217374925, 48.87075327690428]
+        ]
+      ]
+    },
+    "date": "Every Wednesday at 18h",
+    "mail": "info@croix-rouge.fr",
+    "tel": "+33 2 34 56 78 90",
+    "link": "https://www.croix-rouge.fr"
+  },
+  {
+    "id": "6de1ac",
+    "name": "Les Enfants de Don Quichotte",
+    "description": "An association dedicated to providing street food, shelter, and support to homeless people in Paris, particularly focused on their social integration.",
+    "image": "/placeholder.jpg",
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [2.358233191945601, 48.86123539738202],
+          [2.356085362605512, 48.85934011426801],
+          [2.358284330738769, 48.858274686924716],
+          [2.358744579883279, 48.85867843048129],
+          [2.36288682218094, 48.856861558830985],
+          [2.363909598056324, 48.85830833234539],
+          [2.3621367865381444, 48.85889151604539],
+          [2.3621367865381444, 48.85919432028689],
+          [2.358233191945601, 48.86123539738202]
+        ]
+      ]
+    },
+    "date": "Every Friday at 20h",
+    "mail": "contact@enfantsdonquichotte.org",
+    "tel": "+33 3 45 67 89 01",
+    "link": "https://www.enfantsdonquichotte.org"
+  },
+  {
+    "id": "1ad75e",
+    "name": "Aide aux Sans-Abri",
+    "description": "This organization is dedicated to helping the homeless with food, clothing, and medical assistance through various outreach programs including maraudes.",
+    "image": "/placeholder.jpg",
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [2.3665577237908906, 48.853560219127274],
+          [2.365935274589731, 48.85219226087443],
+          [2.3656489479580785, 48.85207758004148],
+          [2.367628336417255, 48.8516680034933],
+          [2.3665577237888726, 48.849308777351496],
+          [2.36810139780701, 48.84902205826455],
+          [2.368611806138915, 48.85002180254742],
+          [2.370566296629846, 48.84911250073924],
+          [2.370865072247085, 48.84912888470183],
+          [2.3694275800301625, 48.85250617673705],
+          [2.3697651373718998, 48.85330057220574],
+          [2.3702755457175897, 48.8532841896087],
+          [2.371445750215372, 48.854332665034576],
+          [2.3703377906366825, 48.85515996217629],
+          [2.369802484324282, 48.85538930945884],
+          [2.369254729027716, 48.85411150407663],
+          [2.3689684023946143, 48.85403778354021],
+          [2.3690555452833735, 48.8535708842889],
+          [2.3687318716979178, 48.85343982406721],
+          [2.368570034905929, 48.85324323309146],
+          [2.3665577237908906, 48.853560219127274]
+        ]
+      ]
+    },
+    "date": "Every Sunday at 17h",
+    "mail": "support@aideauxsansabri.fr",
+    "tel": "+33 4 56 78 90 12",
+    "link": "https://www.aideauxsansabri.fr"
+  },
+  {
+    "id": "98866a",
+    "name": "Le Secours Populaire Français",
+    "description": "Secours Populaire offers assistance to the most vulnerable through food distribution, social support, and solidarity actions in various parts of France.",
+    "image": "/placeholder.jpg",
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [2.34103133042197, 48.8750725781108],
+          [2.3423774710335863, 48.87393663065015],
+          [2.3431648362966655, 48.872650306061644],
+          [2.343063240778804, 48.8714808913725],
+          [2.3479398256352226, 48.87067899121644],
+          [2.3479144267555796, 48.87395333594685],
+          [2.3482954099472977, 48.87575747514484],
+          [2.3471778592510475, 48.875790884516164],
+          [2.3470000670949958, 48.87503916825929],
+          [2.346720679421111, 48.87505587318782],
+          [2.3465428872650875, 48.87407027286662],
+          [2.3442569881132727, 48.87402015707741],
+          [2.3445363757871576, 48.875957931039466],
+          [2.34103133042197, 48.8750725781108]
+        ]
+      ]
+    },
+    "date": "Every Saturday at 15h",
+    "mail": "contact@secourspopulaire.fr",
+    "tel": "+33 5 67 89 01 23",
+    "link": "https://www.secourspopulaire.fr"
+  },
+  {
+    "id": "009474",
+    "name": "Banque Alimentaire",
+    "description": "The Food Bank (Banque Alimentaire) collects and redistributes food to local charities, and also runs street food programs for the homeless.",
+    "image": "/placeholder.jpg",
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [2.3496290921766843, 48.88350403264468],
+          [2.354005979381782, 48.8785216253724],
+          [2.3620430705054503, 48.88060891045049],
+          [2.3617871121898304, 48.88145053301747],
+          [2.3629645204432848, 48.881905003314785],
+          [2.3633228620861075, 48.88229214142186],
+          [2.359253124860345, 48.88424461837985],
+          [2.351241629567653, 48.88370601166008],
+          [2.3496290921766843, 48.88350403264468]
+        ]
+      ]
+    },
+    "date": "Every Thursday at 19h",
+    "mail": "info@banquealimentaire.org",
+    "tel": "+33 6 78 90 12 34",
+    "link": "https://www.banquealimentaire.org"
+  },
+  {
+    "id": "742264",
+    "name": "Emmaüs",
+    "description": "Emmaüs is a charitable organization that offers support to homeless people, providing them with food, housing, and integration programs.",
+    "image": "/placeholder.jpg",
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [2.325900386737601, 48.856036255563566],
+          [2.3256759584926954, 48.855754352109415],
+          [2.326818502288944, 48.85168671128892],
+          [2.3272673587800057, 48.85161958573116],
+          [2.3318987416688515, 48.8524385113862],
+          [2.332959675193308, 48.853552765764874],
+          [2.3326536366766675, 48.853942077713896],
+          [2.3304297567879644, 48.85441193293076],
+          [2.3275121895928805, 48.855284509491725],
+          [2.325900386737601, 48.856036255563566]
+        ]
+      ]
+    },
+    "date": "Every Tuesday at 16h",
+    "mail": "contact@emmaus.fr",
+    "tel": "+33 7 89 01 23 45",
+    "link": "https://www.emmaus-france.org"
+  },
+  {
+    "id": "b7c91d",
+    "name": "Le Samu Social de Paris",
+    "description": "Le Samu Social de Paris provides emergency social assistance to homeless individuals through mobile units and street outreach (maraudes), offering food, medical care, and shelter.",
+    "image": "/placeholder.jpg",
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [2.343181621965499, 48.86912235015885],
+        [2.3456053163323247, 48.86856073243183],
+        [2.345440064444091, 48.8677817038577],
+        [2.349461193734129, 48.86892306717087],
+        [2.349736613548913, 48.868578849230715],
+        [2.3499156364279656, 48.86836144720658],
+        [2.3517609491843245, 48.86782699654904],
+        [2.351210109555524, 48.86652255063623],
+        [2.3464178047851476, 48.86753712261816],
+        [2.3438426295200827, 48.86677619555991],
+        [2.3439665684366844, 48.86731971606801],
+        [2.343346873853733, 48.868760016862865]
+      ]
+    },
+    "date": "Every Friday at 21h",
+    "mail": "help@samusocial.paris",
+    "tel": "+33 8 90 12 34 56",
+    "link": "https://www.samusocial.paris"
+  },
+  {
+    "id": "d7f02f",
+    "name": "La Mie de Pain",
+    "description": "La Mie de Pain provides street food and support to homeless individuals in Paris, through outreach programs that include mobile distribution of meals and basic necessities.",
+    "image": "/placeholder.jpg",
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [2.3552114626903062, 48.8642261858609],
+        [2.3547790381732057, 48.863746142838664],
+        [2.3577789832614826, 48.86285716211941],
+        [2.3562384709189246, 48.86122139633795],
+        [2.355184436158595, 48.86068798289395],
+        [2.3535358176868044, 48.86113249449244],
+        [2.3529412339752867, 48.86022568664359],
+        [2.3543195871243086, 48.85985229040173],
+        [2.353697976880312, 48.85903436508954],
+        [2.3547249851089305, 48.85862539742158],
+        [2.3545628259145985, 48.8582342078295],
+        [2.354887144302495, 48.858091956310886]
+      ]
+    },
+    "date": "Every tuesday at 21h",
+    "mail": "help@lamiedepain.org",
+    "tel": "+33 8 90 12 34 56",
+    "link": "https://www.lamiedepain.org"
+  }
+]
